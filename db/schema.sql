@@ -1,9 +1,3 @@
-create table IF NOT EXISTS contacts (
-	first_name VARCHAR(50),
-	last_name VARCHAR(50),
-	email VARCHAR(50),
-	phone VARCHAR(50)
-);
 insert into contacts (first_name, last_name, email, phone) values ('Nessie', 'Aris', 'naris0@bandcamp.com', '298-108-5883');
 insert into contacts (first_name, last_name, email, phone) values ('Sullivan', 'Shoorbrooke', 'sshoorbrooke1@pinterest.com', '144-695-5915');
 insert into contacts (first_name, last_name, email, phone) values ('Elyn', 'Mangam', 'emangam2@google.ca', '494-744-4973');

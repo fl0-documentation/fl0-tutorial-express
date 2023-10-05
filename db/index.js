@@ -10,9 +10,16 @@ const pool = new pg.Pool({
 });
 
 export const bootstrap = async () => {
+    await query(`
+    create table IF NOT EXISTS contacts (
+        first_name VARCHAR(50),
+        last_name VARCHAR(50),
+        email VARCHAR(50),
+        phone VARCHAR(50)
+    );`);
 
-    const res = await query('SELECT * from contacts');
-    if (!res.rowCount) {
+    const contacts = await query('SELECT * from contacts');
+    if (!contacts.rowCount) {
         console.log('Bootstrapping database');
         const schema = fs.readFileSync('db/schema.sql');
         await query(schema.toString('utf-8'))
